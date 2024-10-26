@@ -1,0 +1,434 @@
+<html>
+
+<head>
+    <style>
+        * {
+            margin: auto;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Lora', serif;
+            letter-spacing: 2px;
+            font-weight: 400;
+            font-size: 1.2vw;
+        }
+        
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        h1 {
+            padding-bottom: 30px;
+            padding-left: 0.5em;
+            text-align: center;
+            font-size: 5vw;
+            letter-spacing: 0.5em;
+        }
+        
+        h2 {
+            font-size: 2.8vw;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        header {
+            position: fixed;
+            display: flex;
+            flex-direction: row;
+            background: #030f12;
+            color: white;
+            width: 100%;
+            max-height: max-content;
+            min-height: 1em;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+        
+        .logo-section {
+            width: 10%;
+            margin-left: initial;
+        }
+        
+        .site-logo {
+            margin-left: 0.8em;
+            max-width: 60%;
+        }
+        
+        .navigation-bar {
+            width: 70%;
+            flex-grow: 2%;
+            margin-inline-end: initial;
+        }
+        
+        a {
+            color: grey;
+            text-decoration: none;
+        }
+        
+        header a,
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        ul {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 100%;
+            padding: 0px;
+            padding-top: 1em;
+            width: 100%;
+        }
+        
+        section {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            padding: 10% 0;
+        }
+        
+        section div {
+            width: 50%;
+            margin: 0 auto;
+        }
+        
+        section h2 {
+            text-align: center;
+        }
+        
+        .cover-sect {
+            margin-top: 0px;
+            padding: 5% 0;
+        }
+        
+        .title-text {
+            width: 40%;
+            text-align: center;
+            color: black;
+            margin: auto;
+            padding: 0 20px;
+            animation: fade-in;
+            animation-duration: 8s;
+        }
+        
+        .story-sect {
+            display: flex;
+            flex-direction: row-reverse;
+            background-color: #030f12;
+            color: #fff;
+        }
+        
+        .box-feature {
+            width: 60%;
+            max-height: auto;
+        }
+        
+        .box-feature img {
+            width: 100%;
+        }
+        
+        .box-feature .cover-image {
+            animation: fade-in;
+            animation-duration: 5s;
+        }
+        
+        .section-text h2 {
+            text-align: center;
+        }
+        
+        .section-text p {
+            text-align: justify;
+            margin: auto 2.5em;
+            line-height: 1.8em;
+        }
+        
+        .samples {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .featured {
+            width: 90%;
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr;
+            grid-gap: 5%;
+            margin: 20px auto;
+        }
+        
+        .cont {
+            width: 100%;
+            color: black;
+        }
+        
+        .cont img {
+            max-width: 100%;
+            max-height: auto;
+        }
+        
+        .contact-section {
+            background: #030f12;
+            color: #fff;
+        }
+        
+        .contact-section p {
+            padding-right: 2em;
+            padding-left: 3em;
+        }
+        
+        .form-box {
+            padding-top: 1em;
+        }
+        
+        form .form-entry {
+            display: block;
+            padding: 0.8em 0;
+        }
+        
+        form .txt-box {
+            margin-top: 0.3em;
+            width: 100%;
+            padding: 0.7em 0;
+            border-radius: 2px;
+            border: 2px transparent;
+        }
+        
+        form .btn {
+            text-align: center;
+            background-color: #e6e8e8;
+            color: #000;
+            font-weight: 700;
+            letter-spacing: inherit;
+            border: 2px solid #eaeaea;
+            box-shadow: 0px 0px 10px 1px #29393e;
+            border-radius: 2px;
+            padding: 0.7em;
+        }
+        
+        .btn:hover {
+            cursor: pointer;
+            background: black;
+            color: white;
+        }
+        
+        .footer-section {
+            display: flex;
+            flex-direction: row-reverse;
+            height: 5em;
+            width: 100%;
+            color: #fff;
+            background-color: #1d2c2f;
+            text-transform: uppercase;
+        }
+        
+        .footer-section div {
+            margin-right: 2em;
+        }
+        
+        .footer-section span {
+            text-align: center;
+            margin-left: 2em;
+        }
+        
+        .footer-section .personal-info {
+            margin-left: 15em;
+        }
+        
+        @media all and (max-width: 768px) {
+            section div {
+                width: 80%;
+                padding-top: 2em;
+                padding-bottom: 2em;
+            }
+            .story-sect,
+            .sample,
+            .contact-section,
+            .featured {
+                display: flex;
+                flex-direction: column;
+            }
+            .featured {
+                width: 80%;
+                margin: 0 auto;
+            }
+            .section-text h2 {
+                text-align: center;
+            }
+            .section-text p {
+                text-align: justify;
+                margin-right: 10%;
+                margin-left: 10%;
+                font-size: 2.0vw;
+            }
+        }
+        
+        div.scroll-container {
+            background-color: #333;
+            overflow: auto;
+            white-space: nowrap;
+            padding: 50px;
+        }
+        
+        div.scroll-container img {
+            padding: 15px;
+        }
+        
+        .footer {
+            background-color: #24262b;
+            padding: 70px 0;
+        }
+        
+        .ul {
+            list-style: none;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+    <body>
+        <header id="header">
+            <div class="logo-section">
+                <img id="header-img" class="site-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPDlZbdew5KL4YAAOiFABn9Wu8gC_9rsTNNg&usqp=CAU" alt="company-logo">
+            </div>
+            <nav id="nav-bar" class="navigation-bar">
+                <ul style="list-style:none;" class="navigation">
+                    <li><a class="nav-link" href="#Home">Home</a></li>
+                    <li><a class="nav-link" href="#story">Define </a></li>
+                    <li><a class="nav-link" href="#Watch Now">Watch Now</a></li>
+                    <li><a class="nav-link" href="#Photo">Photo</a></li>
+                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="container">
+                <section id="Home" class="cover-sect">
+                    <div class="title-text">
+                        <h2>CYBER SECURITY</h2>
+                        <p>Ethical Hackers</p>
+                    </div>
+                    <div class="box-feature">
+                        <img class="cover-image" src="https://media.licdn.com/dms/image/D5612AQE0r5WC8r0HQg/article-cover_image-shrink_720_1280/0/1657711469335?e=2147483647&v=beta&t=y46kqfqImgi-IbshBGRs3lMz1HCTBvL8RjFAILShitg" alt="Living room sample" />
+                    </div>
+                </section>
+
+
+                <section id="story" class="story-sect">
+                    <div class="section-text">
+                        <h2>Cyber Security</h2>
+                        <p>Cyber threats are a global risk that governments, the private sector and non-governmental organizations must deal with. <br><br>Chatham House aims to build cyber capacity and expertise among policymakers via our International Security
+                            Programme Cyber Policy Portfolio and Journal of Cyber Policy.<br><br>The Cyber Policy Portfolio focuses on building cyber capacity and expertise among policymakers by publishing in-depth policy research, conducting cyber simulation
+                            exercises and convening high-level meetings.</p>
+                    </div>
+                    <div class="box-feature">
+                        <img src="https://eu-images.contentstack.com/v3/assets/blt69509c9116440be8/blt792f01925f27639d/658080c68be3a5040a8c3d33/cybersecurity_future-Vyacheslav_Lopatin_-alamy.jpg?width=850&auto=webp&quality=95&format=jpg&disable=upscale" />
+                    </div>
+                </section>
+
+
+                <section id="Watch Now" class="samples">
+                    <div class="section-text">
+                        <h2>Video</h2>
+                        <p>A video for cyber security that can help you learn more about cyber attacks </p>
+                    </div>
+                    <div class="featured">
+                        <div class="cont">
+                            <figure>
+                                <video src="walia2.mp4" width="400" controls></video>
+                            </figure>
+                        </div>
+
+                        <div class="cont">
+                            <figure>
+                                <video src="walia1.mp4 " width="400" controls></video>
+                            </figure>
+                        </div>
+
+                        <div class="cont">
+                            <figure>
+                                <video src="walia.mp4" width="400" controls></video>
+
+                            </figure>
+                        </div>
+
+                    </div>
+                    <div class="video-section">
+                        <video src="walia6.mp4" width="450" height="750" controls></video>
+                    </div>
+                </section>
+                <section id="Photo">
+                    <figure>
+                        <div class="section-text">
+                            <h2>Photo</h2>
+                        </div>
+                        <div class="scroll-container">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDw6kXGu3MffuXkI70F-M_tyFn33NRbkqLRA&s">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU8t9xeCSpcaycBa0axAEh3_QWLLJWhAXg5w&s">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuoT8Jvk3z2OovhKzEXgMhnvBtTTiNMS3LqA&s">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNr3pT03s8wePuaPtk9b7Sqw7A22cJUYo7uA&s">
+                        </div>
+                    </figure>
+                </section>
+
+
+                <section id="contact" class="contact-section">
+                    <div class="section-text">
+                        <h2>Get in touch</h2>
+                        <p>We would love to hear from you! <br><br>If you would like to receive our monthly catalogue subscribe by filling in the form with your name and email address</p>
+                    </div>
+                    <div class="contact-info">
+                        <div class="form-box">
+                            <form action="https://formsubmit.co/your@email.com" method="POST">
+                            <form id="form" class="contact-form">
+                                <label for="name" class="form-entry">Name <br>
+                  <input name="name" id="name" type="text" class="txt-box" placeholder="Enter name" required><br>
+                </label>
+                                <label for="email" class="form-entry">Email <br>
+                  <input name="email" id="email" type="email" class="txt-box" placeholder="Enter email" required><br>
+                </label>
+                                <label for="message" class="form-entry">Message<br>
+                  <textarea name="message" id="message" type="textarea" class="txt-box" placeholder="Optional"></textarea><br>
+                </label><br>
+                                <input class="btn" id="submit" type="submit" value="Submit">
+                            </form>
+                            </form>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+        </main>
+        <footer class="footer-section">
+            <div class="footer-info">
+                <ul style="list-style:none;">
+                    <li><span>Privacy</span></li>
+                    <li><span>Terms</span></li>
+                    <li><span>Contact</span></li>
+                </ul>
+            </div>
+            <span class="personal-info">Created by Walia<br>Reach out on inst @Ishanwalia</span>
+            <span>Copyright 2024</span>
+        </footer>
+
+
+    </body>
+</body>
+
+</html>
